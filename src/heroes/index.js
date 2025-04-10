@@ -8,3 +8,7 @@ export { SearchPage } from './pages/SearchPage'
 // COMPONENTES
 export { HeroList } from './components/HeroList'
 export { HeroCard } from './components/HeroCard'
+
+// HELPERS
+export { getHeroById } from './helpers/getHeroById'
+export { getHeroesByPublisher } from './helpers/getHeroesByPublisher'
