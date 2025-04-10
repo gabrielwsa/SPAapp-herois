@@ -1,8 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { getHeroesByPublisher } from "../helpers/getHeroesByPublisher";
 
-const alterEgo = (alter_ego, characters) => {
+const AlterEgo = ({alter_ego, characters}) => {
     if (alter_ego === characters) return <></>;
 
 
@@ -19,7 +18,7 @@ export const HeroCard = ({
 }) => {
 
 
-    const heroImg = `../../public/assets/heroes/${id}.jpg`;
+    const heroImg = `../../assets/heroes/${id}.jpg`;
 
     return(
         <div className="col">
@@ -35,7 +34,7 @@ export const HeroCard = ({
                             {/* {
                                 (alter_ego !== characters) && <p className="card-text">{characters}</p>
                             } */}
-                            <alterEgo alter_ego={alter_ego} characters={characters} />
+                            <AlterEgo alter_ego={alter_ego} characters={characters} />
                             <p className="card-text">{characters}</p>
                             <p className="card-text text-muted">{first_appearance}</p>
                             <Link to={`/hero/${id}`}>
