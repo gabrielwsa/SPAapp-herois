@@ -1,4 +1,4 @@
-import { AppRouter, HeroesRouters } from './router'
+import { AppRouter } from './router'
 
 export default function HeroisApp() {
   return (
