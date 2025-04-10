@@ -4,3 +4,7 @@ export { MarvelPage } from './pages/MarvelPage'
 export { DCPage } from './pages/DcPage'
 export { HeroPage } from './pages/HeroPage'
 export { SearchPage } from './pages/SearchPage'
+
+// COMPONENTES
+export { HeroList } from './components/HeroList'
+export { HeroCard } from './components/HeroCard'
