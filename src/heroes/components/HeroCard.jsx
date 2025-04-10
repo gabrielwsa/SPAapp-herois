@@ -39,7 +39,7 @@ export const HeroCard = ({
                             <p className="card-text text-muted">{first_appearance}</p>
                             <Link to={`/hero/${id}`}>
                                 <button className="btn btn-outline-primary">
-                                    Mais informacións
+                                    Mais informações
                                 </button>
                             </Link>
                         </div>
