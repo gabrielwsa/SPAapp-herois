@@ -1,4 +1,3 @@
-
 // export * from './components' // PODEMOS EXPORTAR TODOS OS COMPONENTES DO DIRETORIO
 // export * from './pages' // PODEMOS EXPORTAR TODAS AS PAGES DO DIRETORIO
 export { MarvelPage } from './pages/MarvelPage'

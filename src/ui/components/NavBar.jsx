@@ -20,6 +20,11 @@ export const NavBar = () => {
                     Login
                 </NavLink>
             </div>
+            <div className="navbar-nav ms-auto">
+                <NavLink className={({isActive}) => `nav-link ${isActive ? 'active' : ''}`} to="/logout">
+                    Logout
+                </NavLink>
+            </div>
         </div>
       </div>
     </nav>
