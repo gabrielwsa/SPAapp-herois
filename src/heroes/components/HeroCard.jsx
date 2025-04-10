@@ -18,7 +18,7 @@ export const HeroCard = ({
 }) => {
 
 
-    const heroImg = `../../assets/heroes/${id}.jpg`;
+    const heroImg = `./src/assets/heroes/${id}.jpg`;
 
     return(
         <div className="col">

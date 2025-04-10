@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import { useParams, Navigate, Link } from "react-router-dom";
 import { getHeroById } from "../";
 
@@ -5,7 +6,8 @@ export const HeroPage = () => {
     
     const {heroId} = useParams();
 
-    const hero = getHeroById(heroId);
+    const hero = useMemo( () => getHeroById(heroId), [heroId])
+    // const hero = getHeroById(heroId);
 
     if (!hero) {
         return <Navigate to="/marvel" />
