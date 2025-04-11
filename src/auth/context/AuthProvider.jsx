@@ -8,14 +8,38 @@ const initialState = {
     user: null
 }
 
+const init = () => {
+    const user = JSON.parse(localStorage.getItem('user'))
+    return {
+        //! O operador !! é usado para converter um valor em booleano
+        //! O primeiro ! converte o valor para o oposto booleano
+        //! O segundo ! converte de volta para o valor booleano original
+        //! Exemplo: 
+        //! - !!null -> !true -> false
+        //! - !!'user' -> !false -> true
+        logged: !!user,
+        user: user
+    }
+}
+
 export const AuthProvider = ({ children }) => {
 
-    const [authState, dispatch] = useReducer(authReducer, initialState)
+    const [authState, dispatch] = useReducer(authReducer, initialState, init)
 
     const onLogin = async(name = '') => {
+        const user = { name }
         const action = {
             type: types.login,
-            payload: { name: name },
+            payload: user,
+        }
+        localStorage.setItem('user', JSON.stringify(user))
+        dispatch(action)
+    }
+
+    const onLogout = () => {
+        localStorage.removeItem('user')
+        const action = {
+            type: types.logout
         }
         dispatch(action)
     }
@@ -29,6 +53,7 @@ export const AuthProvider = ({ children }) => {
         <AuthContext.Provider value={{
             ...authState,
             onLogin,
+            onLogout
         }}>
             {children}
         </AuthContext.Provider>

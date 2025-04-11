@@ -1,6 +1,7 @@
 import { types } from "../types/types";
 
-
+//! NAO CHAME O LOCALSTORAGE NO REDUCER, CHAME NO PROVIDER
+//! O REDUCER É RESPONSAVEL POR MUDAR O STATE E SOMENTE E APENAS ISSO
 export const authReducer = (state = {}, action) => {
     
     switch (action.type) {

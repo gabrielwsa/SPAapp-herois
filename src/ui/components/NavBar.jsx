@@ -7,10 +7,12 @@ export const NavBar = () => {
     //! USENAVIGATE É UM CUSTOM HOOK QUE É USADO PARA NAVEGAR ENTRE AS PAGES
     //! CRIADO PELA GENTE DO REACT ROUTER
     const navigate = useNavigate()
+    const { onLogout } = useContext(AuthContext)
 
-    const onLogout = () => {
+    const Logout = () => {
         //* replace: true é usado para que o usuário não possa voltar para a página anterior
         //* basicamente subistitui o history.push do react-router-dom v5
+        onLogout()
         navigate('/login', {
             replace: true
         })
@@ -50,7 +52,7 @@ export const NavBar = () => {
                 <span className="text-dark me-3">
                     {user?.name}
                 </span>
-                <button onClick={onLogout} className="btn btn-outline-danger rounded-pill px-4">
+                <button onClick={Logout} className="btn btn-outline-danger rounded-pill px-4">
                     <i className="bi bi-box-arrow-right me-1"></i>Logout
                 </button>
             </div>
