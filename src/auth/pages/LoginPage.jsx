@@ -8,14 +8,19 @@ export const LoginPage = () => {
   
   //* USANDO O USELOCATION PARA PEGAR O ÚLTIMO PATH
   const navigate = useNavigate()
-  const location = useLocation()
-  const lastPath = location.state?.from || '/'
+
 
   const login = (e) => {
     //* PREVENT DEFAULT É USADO PARA PREVENIR O COMPORTAMENTO PADRÃO DO FORMULARIO
     e.preventDefault()
+    const lastPath = localStorage.getItem('lastPath') || '/'
+
+    console.log(lastPath)
+
     onLogin('Gabriel')
-    navigate(lastPath, { replace: true })
+    navigate(lastPath, {
+      replace: true
+    });
   }
  
 

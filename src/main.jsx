@@ -8,14 +8,8 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 // AGREGANDO FUTURE PARA EVITAR ALERTAS DE ROUTE NO CONSOLE
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter
-      future={{
-        v7_startTransition: true,
-        v7_relativeSplatPath: true,
-      }}
-    >
+    <BrowserRouter>
       <HeroisApp />
-      {/* <Footer /> */}
     </BrowserRouter>
   </StrictMode>
 )

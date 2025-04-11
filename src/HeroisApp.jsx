@@ -6,7 +6,6 @@ export default function HeroisApp() {
     <div>
         <AuthProvider>
             <AppRouter />
-            <Footer />
         </AuthProvider>
     </div>
   )
