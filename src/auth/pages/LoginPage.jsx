@@ -1,17 +1,21 @@
 import { useContext } from "react"
-import { useNavigate } from "react-router-dom"
+import { useNavigate, useLocation } from "react-router-dom"
 import { AuthContext } from "../context/AuthContext"
 
 export const LoginPage = () => {
   
   const { onLogin } = useContext(AuthContext)
+  
+  //* USANDO O USELOCATION PARA PEGAR O ÚLTIMO PATH
   const navigate = useNavigate()
+  const location = useLocation()
+  const lastPath = location.state?.from || '/'
 
   const login = (e) => {
     //* PREVENT DEFAULT É USADO PARA PREVENIR O COMPORTAMENTO PADRÃO DO FORMULARIO
     e.preventDefault()
     onLogin('Gabriel')
-    navigate('/', { replace: true })
+    navigate(lastPath, { replace: true })
   }
  
 
