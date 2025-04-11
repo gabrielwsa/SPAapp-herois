@@ -1,5 +1,7 @@
 import { Link, NavLink } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
+import { useContext } from 'react'
+import { AuthContext } from '../../auth'
 
 export const NavBar = () => {
     //! USENAVIGATE É UM CUSTOM HOOK QUE É USADO PARA NAVEGAR ENTRE AS PAGES
@@ -14,7 +16,7 @@ export const NavBar = () => {
         })
     }
 
-
+    const { user } = useContext(AuthContext)
 
   return (
     <nav className="navbar navbar-expand-lg shadow-sm bg-white">
@@ -45,6 +47,9 @@ export const NavBar = () => {
                 </li>
             </ul>
             <div className="d-flex">
+                <span className="text-dark me-3">
+                    {user?.name}
+                </span>
                 <button onClick={onLogout} className="btn btn-outline-danger rounded-pill px-4">
                     <i className="bi bi-box-arrow-right me-1"></i>Logout
                 </button>
